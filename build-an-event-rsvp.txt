@@ -1,0 +1,134 @@
+** start of index.html **
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event RSVP</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.5/babel.min.js"></script>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      src="index.jsx"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      data-presets="react"
+      data-type="module"
+    >
+      import { EventRSVPForm } from './index.jsx';
+      ReactDOM.createRoot(document.getElementById('root')).render(
+        <EventRSVPForm />
+      );
+    </script>
+  </body>
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+
+** start of index.jsx **
+
+const { useState } = React;
+
+export function EventRSVPForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [attendees, setAttendees] = useState(1);
+  const [dietary, setDietary] = useState('');
+  const [additionalGuests, setAdditionalGuests] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <div>
+    <h1>Event RSVP Form</h1>
+
+    <form onSubmit={handleSubmit}>
+
+    <label>
+    Name (required):
+    <input
+    type="text"
+    value={name}
+    onChange={(e) => setName(e.target.value)}
+    required
+    />
+    </label>
+    
+    <label>
+    Email (required):
+    <input
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    required
+    />
+    </label>
+
+    <label>
+    Number of attendees (required):
+    <input
+    type="number"
+    value={attendees}
+    onChange={(e) => setAttendees(Number(e.target.value))}
+    min="1"
+    required
+    />
+    </label>
+
+    <label>
+    Dietary preferences (optional):
+    <input
+    type="text"
+    value={dietary}
+    onChange={(e) => setDietary(e.target.value)}
+    />
+    </label>
+
+    <label>
+    <input
+    type="checkbox"
+    checked={additionalGuests}
+    onChange={(e) => setAdditionalGuests(e.target.checked)}    
+    />
+    Bring additional guests
+    </label>
+    <button type="submit">Submit RSVP</button>
+    </form>
+
+    {submitted && (
+      <div>
+      <h2>RSVP Submitted!</h2>
+      <p>Name: {name}</p>
+      <p>Email: {email}</p>
+      <p>Number of attendees: {attendees}</p>
+      <p>Dietary preferences: {dietary || 'None'}</p>
+      <p>Bringing additional guests: {additionalGuests ? 'Yes' : 'No'}</p>
+      </div>
+    )}
+
+    </div>
+  );
+}
+
+** end of index.jsx **
+
