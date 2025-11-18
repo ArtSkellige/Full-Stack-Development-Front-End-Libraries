@@ -1,0 +1,42 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Shopping Cart Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="shopping-cart-container" class="flex flex-col lg:flex-row">
+
+      <div id="products-container">
+        <div class="card">
+          <h2 class="text-2xl">Black Diamond Apple</h2>
+          <div class="quantity">2 packs</div>
+          <div class="price">$28.99</div>
+          <button class="remove-button bg-red-400 hover:bg-red-800">Remove</button>
+        </div>
+
+        <div class="card">
+          <h2 class="text-2xl">Shine muscat grapes</h2>
+          <div class="quantity">1 pack</div>
+          <div class="price">$20.19</div>
+          <button class="remove-button bg-red-400 hover:bg-red-800">Remove</button>
+        </div>
+      </div>
+
+      <div id="order-summary-container" class="rounded-full border-2">
+        <h2 class="text-2xl">Order Summary</h2>
+        <div id="total" class="font-bold text-3xl">Total:</div>
+        <span id="total-amount">$49.18</span>
+        <a href="#" class="text-center bg-blue-400 hover:bg-blue-500">Checkout</a>
+      </div>
+
+    </div>
+  </body>
+</html>
+
+** end of index.html **
+
