@@ -1,0 +1,44 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography Exhibit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+ <div class="main-container grid grid-cols-3 gap-4">
+
+ <div class="card rounded-xl p-4">
+   <img src="https://cdn.freecodecamp.org/curriculum/labs/colosseo.jpg"
+   alt="Ancient Roman Colosseum with stone arches and columns"
+   class="rounded-xl">
+   <div class="subheading font-semibold text-xl">The Colosseum</div>
+     <div class="description text-lg">Rome's most famous monument with towering arches.</div>
+ </div>
+
+ <div class="card rounded-xl p-4">
+   <img src="https://cdn.freecodecamp.org/curriculum/labs/alps.jpg"
+   alt="Snow-capped mountain peaks in the Alps"
+   class="rounded-xl">
+   <div class="subheading font-semibold text-xl">Alpine Majesty</div>
+     <div class="description text-lg">Stunning Alpine landscape in pristine winter conditions.</div>
+ </div>
+
+  <div class="card rounded-xl p-4">
+   <img src="https://cdn.freecodecamp.org/curriculum/labs/sea.jpg"
+   alt="Turquoise Mediterranean waters along rocky coastline"
+   class="rounded-xl">
+   <div class="subheading font-semibold text-xl">Mediterranean Coast</div>
+     <div class="description text-lg">Crystal-clear turquoise waters along the Mediterranean shore.</div>
+ </div>
+
+ </div>
+
+  </body>
+</html>
+
+** end of index.html **
+
