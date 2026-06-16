@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Military Trivia: Flashcard Challenge</title>
+    <link rel="stylesheet" href="build-a-flashcard-quiz-app.css" />
+  </head>
+  <body>
+    <div id="flashcard">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <p id="locked-question"></p>
+        </div>
+        <div class="flashcard-back">
+          <p id="card-answer"></p>
+        </div>
+      </div>
+    </div>
+
+    <button id="next-btn">Oscar Mike to next card</button>
+    <button id="prev-btn">Oscar Alpha to the previous card</button>
+    <button id="delete-btn">Deep Six this Card</button>
+
+    <form id="entry-form">
+      <label for="front-text">Question Text:</label>
+      <textarea
+        id="front-text"
+        name="front-text"
+        placeholder="Enter military trivia question..."
+      ></textarea>
+
+      <label for="back-text">Answer Text:</label>
+      <textarea
+        id="back-text"
+        name="back-text"
+        placeholder="Enter answer..."
+      ></textarea>
+
+      <p id="error-message" style="color: red; font-weight: bold"></p>
+
+      <button type="submit">Add Flashcard</button>
+    </form>
+    <script src="build-a-flashcard-quiz-app.ts"></script>
+  </body>
+</html>
